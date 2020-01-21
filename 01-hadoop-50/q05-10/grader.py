@@ -15,7 +15,6 @@ r"""Test cases
 11	1
 12	3
 <BLANKLINE>
-
 """
 import doctest
 import subprocess

@@ -27,3 +27,7 @@ u = LOAD 'data.csv' USING PigStorage(',')
 --
 -- >>> Escriba su respuesta a partir de este punto <<<
 --
+
+y = FOREACH u GENERATE $1, $4;
+w = FILTER y BY NOT ($1== 'blue' OR $1=='black');
+store w into 'output' USING PigStorage(',');

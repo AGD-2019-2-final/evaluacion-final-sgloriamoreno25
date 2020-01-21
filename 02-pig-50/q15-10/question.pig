@@ -27,3 +27,7 @@ u = LOAD 'data.csv' USING PigStorage(',')
 --
 -- >>> Escriba su respuesta a partir de este punto <<<
 --
+
+y = FOREACH u GENERATE $1, $4;
+w = FILTER y BY (($1== 'blue') AND ($0 MATCHES 'Z.*'));
+store w into 'output';

@@ -20,3 +20,7 @@ u = LOAD 'data.csv' USING PigStorage(',')
 --
 -- >>> Escriba su respuesta a partir de este punto <<<
 --
+y = FOREACH u GENERATE REGEX_EXTRACT($3,'(....)-(..)-(..)',1);
+z = GROUP y BY $0;
+w = FOREACH z GENERATE group, COUNT($1);
+store w into 'output' USING PigStorage(',');

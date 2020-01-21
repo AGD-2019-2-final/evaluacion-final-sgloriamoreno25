@@ -40,3 +40,13 @@ LOAD DATA LOCAL INPATH 'tbl1.csv' INTO TABLE tbl1;
 -- >>> Escriba su respuesta a partir de este punto <<<
 --
 
+INSERT OVERWRITE LOCAL DIRECTORY 'output'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+
+SELECT c5 
+FROM tbl0 
+LATERAL VIEW 
+    explode (c5) tbl0 AS c5 
+GROUP BY c5 
+ORDER BY c5;

@@ -28,4 +28,16 @@
 fs -rm -f -r output;
 --
 
+u = LOAD 'data.csv' USING PigStorage(',')
+    AS (id:INT,
+        firstname:CHARARRAY,
+        surname:CHARARRAY,
+        birthday:CHARARRAY,
+        color:CHARARRAY,
+        quantity:INT);
+DUMP u;
+
+w = FOREACH u GENERATE $1, $2;
+store w into 'output' USING PigStorage('@');
+
 

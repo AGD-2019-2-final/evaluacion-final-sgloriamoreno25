@@ -33,3 +33,7 @@ u = LOAD 'data.csv' USING PigStorage(',')
 --
 -- >>> Escriba su respuesta a partir de este punto <<<
 --
+
+w = FILTER u BY SUBSTRING($2, 0, 1) IN ('D', 'E', 'F', 'G',' H', 'I', 'J', 'K');
+s = FOREACH w GENERATE $2;
+store s into 'output';

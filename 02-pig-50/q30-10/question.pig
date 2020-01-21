@@ -41,3 +41,6 @@ u = LOAD 'data.csv' USING PigStorage(',')
 -- >>> Escriba su respuesta a partir de este punto <<<
 --
 
+y = FOREACH u GENERATE $3,ToString(ToDate($3,'yyyy-MM-dd'),'dd'),GetDay(ToDate($3,'yyyy-MM-dd')), ToString(ToDate($3,'yyyy-MM-dd'),'EE'), ToString(ToDate($3,'yyyy-MM-dd'),'EEEE');
+w = FOREACH y GENERATE $0, $1, $2, CASE $3 WHEN 'Mon' THEN 'lun' WHEN 'Tue' THEN 'mar' WHEN 'Wed' THEN 'mie' WHEN 'Thu' THEN 'jue' WHEN 'Fri' THEN 'vie' WHEN 'Sat' THEN 'sab' WHEN 'Sun' THEN 'dom' END, CASE $4 WHEN 'Monday' then 'lunes' WHEN 'Tuesday' then 'martes' WHEN 'Wednesday' then 'miercoles'WHEN 'Thursday' then 'jueves' WHEN 'Friday' then 'viernes' WHEN 'Saturday' then 'sabado' WHEN 'Sunday' then 'domingo' END;         
+store w into 'output' USING PigStorage(',');
