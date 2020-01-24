@@ -1,6 +1,6 @@
-_grade: 4.71
+_grade: 4.84
 _score: 100
-date: '2020-01-24 02:30:54.894083'
+date: '2020-01-24 03:20:40.980566'
 tree:
   00-hola_mundo-10/:
     _grade: 5.0
@@ -57,7 +57,7 @@ tree:
       q30-10/: {_grade: 5.0, _score: 10, tree: 5.0}
       q31-10/: {_grade: 5.0, _score: 10, tree: 5.0}
   03-hive-50/:
-    _grade: 4.58
+    _grade: 5.0
     _score: 50
     tree:
       q01-10/: {_grade: 5.0, _score: 10, tree: 5.0}
@@ -68,8 +68,8 @@ tree:
       q06-10/: {_grade: 5.0, _score: 10, tree: 5.0}
       q07-10/: {_grade: 5.0, _score: 10, tree: 5.0}
       q08-10/: {_grade: 5.0, _score: 10, tree: 5.0}
-      q09-10/: {_grade: 0.0, _score: 10, tree: 0.0}
+      q09-10/: {_grade: 5.0, _score: 10, tree: 5.0}
       q10-10/: {_grade: 5.0, _score: 10, tree: 5.0}
       q11-10/: {_grade: 5.0, _score: 10, tree: 5.0}
       q12-10/: {_grade: 5.0, _score: 10, tree: 5.0}
-2020-01-24 02:30:54.993287
+2020-01-24 03:20:41.075956
