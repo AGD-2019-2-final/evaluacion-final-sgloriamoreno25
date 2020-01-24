@@ -32,4 +32,4 @@ SELECT clave, COUNT(clave)
 FROM t0
 LATERAL VIEW 
     explode(c3) t0 AS clave, valor
-GROUP BY clave
+GROUP BY clave;
